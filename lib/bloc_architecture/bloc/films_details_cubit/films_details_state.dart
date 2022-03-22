@@ -1,13 +1,24 @@
 part of 'film_details_cubit.dart';
 
-abstract class FilmsDetailsState {}
+abstract class FilmDetailsState extends Equatable {}
 
-class InitialState extends FilmsDetailsState {}
+class InitialState extends FilmDetailsState {
+  @override
+  List<Object?> get props => [];
+}
 
-class LoadedState extends FilmsDetailsState {
+class LoadingState extends FilmDetailsState{
+  @override
+
+  List<Object?> get props => [];
+
+}
+
+class LoadedState extends FilmDetailsState {
   final Film film;
 
   LoadedState({required this.film});
-}
 
-class ErrorState extends FilmsDetailsState {}
+  @override
+  List<Object?> get props => [film];
+}
